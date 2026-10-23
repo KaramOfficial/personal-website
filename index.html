@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karamvir Singh — GenAI Engineer &amp; AI Solutions Architect</title>
+<meta name="description" content="Karamvir Singh builds production GenAI systems: multi-agent RAG, multimodal search, MLOps on GCP & AWS. 7+ years Python, 5+ years AI at Loblaw, Mia, Scotiabank, Save The Dev. Based in Canada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F0E6;
+  --paper2:#ECE6D8;
+  --ink:#17130C;
+  --ink-soft:#4A4436;
+  --accent:#C0390F;
+  --accent-soft:#F0D9CE;
+  --rule:#17130C;
+  --rule-light:#CFC7B4;
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--paper)}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- top bar ---------- */
+.topbar{border-bottom:2px solid var(--rule);position:sticky;top:0;background:var(--paper);z-index:50}
+.topbar-in{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px;gap:16px}
+.logo{font-family:var(--serif);font-weight:800;font-size:21px;letter-spacing:-.01em;text-decoration:none}
+.logo span{color:var(--accent)}
+.topnav{display:flex;gap:26px}
+.topnav a{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.topnav a:hover{border-bottom-color:var(--accent);color:var(--accent)}
+.top-clock{color:var(--ink-soft)}
+@media(max-width:760px){.topnav{display:none}.top-clock{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 0;border-bottom:2px solid var(--rule)}
+.hero-kicker{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--ink-soft);padding-bottom:26px}
+.hero-kicker .avail{color:var(--accent);font-weight:500}
+.hero h1{font-family:var(--serif);font-weight:850;line-height:.92;letter-spacing:-.015em;font-size:clamp(58px,11.5vw,164px);text-transform:uppercase}
+.hero h1 .line2{display:block;color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero h1 .dot{color:var(--accent);-webkit-text-stroke:0}
+.hero-sub{display:grid;grid-template-columns:1.35fr 1fr;gap:36px;padding:38px 0 44px;align-items:start}
+.hero-sub .lede{font-family:var(--serif);font-size:clamp(21px,2.6vw,30px);line-height:1.32;font-weight:480}
+.hero-sub .lede em{color:var(--accent);font-style:italic}
+.hero-sub .facts{font-size:15px;color:var(--ink-soft);max-width:44ch}
+.hero-sub .facts strong{color:var(--ink)}
+.hero-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:12px 20px;border:2px solid var(--ink);transition:all .15s ease}
+.btn-solid{background:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--accent);border-color:var(--accent)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+@media(max-width:760px){.hero-sub{grid-template-columns:1fr}}
+
+/* ---------- proof bar ---------- */
+.proof{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--rule)}
+.proof div{padding:22px 20px 26px;border-left:1px solid var(--rule-light)}
+.proof div:first-child{border-left:none;padding-left:0}
+.proof .num{font-family:var(--serif);font-size:clamp(30px,4vw,46px);font-weight:800;line-height:1}
+.proof .num i{color:var(--accent);font-style:normal}
+.proof .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-top:9px;line-height:1.5}
+@media(max-width:760px){.proof{grid-template-columns:1fr 1fr}.proof div{padding-left:16px}.proof div:nth-child(odd){border-left:none;padding-left:0}}
+
+/* ---------- sections ---------- */
+section{padding:72px 0;border-bottom:2px solid var(--rule)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:38px}
+.sec-head h2{font-family:var(--serif);font-size:clamp(32px,4.6vw,52px);font-weight:800;letter-spacing:-.01em;line-height:1}
+.sec-head h2 em{color:var(--accent);font-weight:600}
+.sec-head .mono{color:var(--ink-soft)}
+
+/* ---------- work index ---------- */
+.work-row{display:grid;grid-template-columns:64px 1.5fr 1fr 150px;gap:22px;padding:26px 10px;border-top:1px solid var(--rule-light);text-decoration:none;align-items:start;transition:background .15s ease}
+.work-row:first-of-type{border-top:2px solid var(--rule)}
+.work-row:last-of-type{border-bottom:2px solid var(--rule)}
+.work-row:hover{background:var(--paper2)}
+.work-row:hover .w-title{color:var(--accent)}
+.w-idx{font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:7px}
+.w-title{font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);font-weight:700;line-height:1.15;transition:color .15s ease}
+.w-org{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px}
+.w-desc{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+.w-desc strong{color:var(--ink)}
+.w-tags{margin-top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase}
+.w-result{font-family:var(--serif);font-size:19px;font-weight:800;line-height:1.2;text-align:right}
+.w-result small{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px;line-height:1.5}
+.w-arrow{text-align:right;font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:10px}
+@media(max-width:900px){.work-row{grid-template-columns:40px 1fr}.w-result{text-align:left;grid-column:2}.w-desc{grid-column:2}}
+
+/* ---------- side builds strip ---------- */
+.sidebuilds{margin-top:44px;border:2px solid var(--rule);padding:26px 28px;background:var(--paper2)}
+.sidebuilds h3{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:6px}
+.sidebuilds p{font-size:14.5px;color:var(--ink-soft);max-width:72ch}
+.sidebuilds .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.sidebuilds .links a{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--ink);padding:9px 14px;background:var(--paper)}
+.sidebuilds .links a:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- timeline ---------- */
+.tl-row{display:grid;grid-template-columns:190px 1fr 1.2fr;gap:24px;padding:20px 10px;border-top:1px solid var(--rule-light);align-items:baseline}
+.tl-row:first-of-type{border-top:2px solid var(--rule)}
+.tl-row:last-of-type{border-bottom:2px solid var(--rule)}
+.tl-when{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.tl-role{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.2}
+.tl-role span{display:block;font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-top:6px}
+.tl-note{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+.tl-note strong{color:var(--ink)}
+@media(max-width:900px){.tl-row{grid-template-columns:1fr}.tl-note{grid-column:1}}
+
+/* ---------- stack ---------- */
+.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--rule)}
+.stack-col{padding:26px 28px 30px;border-left:1px solid var(--rule-light)}
+.stack-col:first-child{border-left:none}
+.stack-col h3{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.stack-col ul{list-style:none}
+.stack-col li{font-family:var(--serif);font-size:18.5px;font-weight:600;padding:7px 0;border-bottom:1px dotted var(--rule-light)}
+.stack-col li:last-child{border-bottom:none}
+.stack-col li small{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase;margin-left:6px}
+@media(max-width:900px){.stack-grid{grid-template-columns:1fr}.stack-col{border-left:none;border-top:1px solid var(--rule-light)}.stack-col:first-child{border-top:none}}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:44px}
+.about-grid .big{font-family:var(--serif);font-size:clamp(20px,2.3vw,27px);line-height:1.45;font-weight:480}
+.about-grid .big em{color:var(--accent)}
+.about-facts{border-top:2px solid var(--rule)}
+.about-facts div{display:flex;justify-content:space-between;gap:18px;padding:13px 2px;border-bottom:1px solid var(--rule-light);font-size:14px}
+.about-facts .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);padding-top:3px;white-space:nowrap}
+.about-facts .v{text-align:right;font-weight:600}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr}}
+
+/* ---------- contact / footer ---------- */
+.contact{background:var(--ink);color:var(--paper);border-bottom:none}
+.contact .sec-head h2{color:var(--paper)}
+.contact .sec-head .mono{color:#B9B09A}
+.contact-big{font-family:var(--serif);font-size:clamp(30px,5.4vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.01em;max-width:16ch}
+.contact-big em{color:#E8765A;font-weight:600}
+.contact-mail{display:inline-block;margin-top:30px;font-family:var(--serif);font-size:clamp(20px,3vw,32px);font-style:italic;text-decoration:none;border-bottom:3px solid var(--accent);padding-bottom:4px}
+.contact-mail:hover{color:#E8765A}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;border-top:1px solid #45403A;padding-top:26px}
+.contact-grid .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#B9B09A;margin-bottom:9px}
+.contact-grid a{color:var(--paper);text-decoration:none;font-weight:600;font-size:15.5px}
+.contact-grid a:hover{color:#E8765A}
+.contact-grid p{font-size:14px;color:#CFC8B8}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+.footerline{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:46px;padding-top:18px;border-top:1px solid #45403A;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8E8776}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="#top">Karamvir Singh<span>.</span></a>
+    <nav class="topnav">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#stack">Stack</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="mono top-clock">Canada — <span id="clock">--:--</span> ET</div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-kicker mono">
+        <span>GenAI Engineer · AI Solutions Architect</span>
+        <span class="avail">● Available for select engagements — Winter 2026</span>
+        <span>Est. 2019 · Canada</span>
+      </div>
+      <h1>Karamvir<span class="line2">Singh<span class="dot">.</span></span></h1>
+      <div class="hero-sub">
+        <p class="lede">I build GenAI systems that survive production — multi-agent RAG, multimodal search, and the MLOps underneath them. <em>Measured in outcomes, not demos.</em></p>
+        <div>
+          <p class="facts"><strong>7+ years</strong> in Python &amp; software engineering, <strong>5+ years</strong> shipping AI for Loblaw, Mia, Scotiabank, Lemay AI and the City of Ottawa. Currently Lead GenAI / Data Engineer at <strong>Save The Dev Inc.</strong>, and delivering AI architecture via <strong>Toptal</strong> for PepsiCo Global.</p>
+          <div class="hero-links">
+            <a class="btn btn-solid" href="#work">Selected work ↓</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/-karam/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn btn-ghost" href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="proof">
+        <div><div class="num">30<i>×</i></div><div class="lbl">Effort reduction — multi-agent sales pitching system, Save The Dev</div></div>
+        <div><div class="num">+30<i>%</i></div><div class="lbl">Conversion lift — multimodal ecommerce search, 1–10K requests / min</div></div>
+        <div><div class="num">$16<i>M</i></div><div class="lbl">Potential yearly saving — Medslink drug-transfer system, Loblaw</div></div>
+        <div><div class="num">50→10<i>h</i></div><div class="lbl">Pipeline runtime cut — 2M+ records per cycle, GCP / BigQuery / Vertex AI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Selected <em>work</em></h2>
+        <span class="mono">01 — Index, 2019 → Present</span>
+      </div>
+
+      <a class="work-row" href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">
+        <div class="w-idx">/ 01</div>
+        <div>
+          <div class="w-title">Multi-Agent Research + RAG Sales System</div>
+          <div class="w-org">Save The Dev Inc. — Lead GenAI / Data Engineer</div>
+        </div>
+        <p class="w-desc">Productionized a <strong>multi-agent Research + RAG chatbot</strong> for personalized sales-pitch automation. Architecture &amp; product liaison across the full build.</p>
+        <div><div class="w-result">30×<small>effort reduction for the sales team</small></div><div class="w-tags">LangChain · ADK · LlamaIndex · Pinecone · Vertex AI</div></div>
+      </a>
+
+      <a class="work-row" href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">
+        <div class="w-idx">/ 02</div>
+        <div>
+          <div class="w-title">Multimodal Ecommerce Search</div>
+          <div class="w-org">Save The Dev Inc. — for global brands</div>
+        </div>
+        <p class="w-desc">New multimodal search pipeline with <strong>natural-language merchandising</strong> — multimodal LLMs and vector embeddings on AWS, serving <strong>1–10K requests per minute</strong>.</p>
+        <div><div class="w-result">+30%<small>conversion rate, minimum</small></div><div class="w-tags">Multimodal LLMs · Embeddings · AWS</div></div>
+      </a>
+
+      <a class="work-row" href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">
+        <div class="w-idx">/ 03</div>
+        <div>
+          <div class="w-title">Medslink — Drug-Transfer Recommendations</div>
+          <div class="w-org">Loblaw Companies — Sr. Data Engineer</div>
+        </div>
+        <p class="w-desc">Automated <strong>store-to-store drug-moving recommendations</strong> across Loblaw's Canadian drug stores, on large-scale distributed data. Owned the transformation &amp; inference pipelines.</p>
+        <div><div class="w-result">$16M/yr<small>potential cost saving</small></div><div class="w-tags">GCP · BigQuery · Vertex AI</div></div>
+      </a>
+
+      <a class="work-row" href="https://karamofficial.github.io/gurbani-checker/" target="_blank" rel="noopener">
+        <div class="w-idx">/ 04</div>
+        <div>
+          <div class="w-title">Gurbani Subtitle Timestamper</div>
+          <div class="w-org">Independent — Open source, 2026</div>
+        </div>
+        <p class="w-desc">Automated <strong>audio-to-transcript alignment</strong> producing word-level timestamps for Sehaj Paath recordings — all 1,430 Angs, with a public checker anyone can verify. Built with Gemini + classical ML.</p>
+        <div><div class="w-result">30×<small>faster than manual alignment</small></div><div class="w-tags">Gemini · ML Alignment · GitHub Pages</div><div class="w-arrow">Live checker ↗</div></div>
+      </a>
+
+      <a class="work-row" href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">
+        <div class="w-idx">/ 05</div>
+        <div>
+          <div class="w-title">Mia ML — Model Deployment Platform</div>
+          <div class="w-org">Mia Platform Inc. — GenAI / MLOps Engineer</div>
+        </div>
+        <p class="w-desc">Built the <strong>end-to-end AI model deployment pipeline</strong> behind mia-ml.com, and shipped LLM apps for clients — SR&amp;ED task organizer, invoice anomaly detector, Shopify product lister.</p>
+        <div><div class="w-result">Concept → Prod<small>full lifecycle ownership</small></div><div class="w-tags">FastAPI · Docker · GKE · BigQuery · LangChain</div></div>
+      </a>
+
+      <a class="work-row" href="https://github.com/Karamvir-Singh/WGD-Bot" target="_blank" rel="noopener">
+        <div class="w-idx">/ 06</div>
+        <div>
+          <div class="w-title">Systematic Trading Research</div>
+          <div class="w-org">Independent — Python backtester, 2022 → Present</div>
+        </div>
+        <p class="w-desc">ICT/SMC strategy backtests (FVG + market-structure shift) across Gold, SPY, EUR, GBP, BTC, QQQ. <strong>Gold validated; the same rules were rejected everywhere they failed</strong> — negative results stay in the report.</p>
+        <div><div class="w-result">+17.13R<small>Gold 4H/15M · 101 trades · PF 1.28</small></div><div class="w-tags">Python · TwelveData · Statistics</div><div class="w-arrow">WGD-Bot ↗</div></div>
+      </a>
+
+      <div class="sidebuilds">
+        <h3>Also shipped — real sites for real people</h3>
+        <p>Not everything is enterprise AI. I design and hand over working websites for small businesses and community projects — live, on GitHub Pages, owned by the people who run them.</p>
+        <div class="links">
+          <a href="https://karamofficial.github.io/nest-crafters/" target="_blank" rel="noopener">Nest Crafters — Surrey cabinets ↗</a>
+          <a href="https://karamofficial.github.io/by-the-ocean/" target="_blank" rel="noopener">By The Ocean — Halifax events ↗</a>
+          <a href="https://karamofficial.github.io/amritvela-shnaan-tracker/" target="_blank" rel="noopener">Amritvela Shnaan Tracker ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Experience</h2>
+        <span class="mono">02 — Chronological</span>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-when">Aug 2024 — Present</div>
+        <div class="tl-role">Lead GenAI / Data Engineer<span>Save The Dev Inc. — Contract · Kitchener</span></div>
+        <p class="tl-note">Multi-agent RAG sales system (<strong>30× effort cut</strong>), multimodal ecommerce search (<strong>+30% conversion</strong>), automated audio alignment (<strong>30×</strong>). Also AI Solutions Architect via <strong>Toptal</strong> for <strong>PepsiCo Global</strong>.</p>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Dec 2023 — Jul 2024</div>
+        <div class="tl-role">Sr. Data Engineer<span>Loblaw Companies — Contract · Mississauga</span></div>
+        <p class="tl-note">Medslink automated drug-transfer recommendations — <strong>$16M/yr potential saving</strong>. Inference pipelines over <strong>2M+ records/cycle, 50h → 10h</strong>.</p>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Nov 2021 — Dec 2023</div>
+        <div class="tl-role">GenAI / MLOps Engineer<span>Mia Platform Inc. — Montreal</span></div>
+        <p class="tl-note">LLM apps concept-to-production for Mia clients; built the <strong>end-to-end model deployment pipeline</strong> (FastAPI / Docker / GKE). SME to founders &amp; devs on GenAI, DevOps, cloud.</p>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Jun — Sep 2021</div>
+        <div class="tl-role">AI Strategy Consultant<span>Lemay AI — Ottawa</span></div>
+        <p class="tl-note">AI solutions for 3 clients (Random Forests, XGBoost, BERT, PyTorch). SEC database ingestion over <strong>160M rows</strong>; data pipelines made <strong>10× faster</strong> (2 weeks → 18 hrs).</p>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Jan — May 2021</div>
+        <div class="tl-role">President<span>Professional Development Club — uOttawa</span></div>
+        <p class="tl-note">Led a <strong>700+ member</strong> graduate engineers' club; built partnerships with <strong>15+ industry &amp; community organizations</strong> incl. City of Ottawa, Bank of Canada, NRC.</p>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Apr 2020 — Apr 2021</div>
+        <div class="tl-role">AI Engineer<span>City of Ottawa × PDC uOttawa</span></div>
+        <p class="tl-note">End-to-end <strong>computer-vision waste-classification</strong> app — VGG-16 / ResNet50 / Inception at <strong>80–90% accuracy</strong>, FastAPI + Docker on GCP, Flutter mobile front end. Open-sourced as WasteAdvisor.</p>
+      </div>
+      <div class="tl-row">
+        <div class="tl-when">Jan — Aug 2019</div>
+        <div class="tl-role">IT Analyst<span>KPMG — India</span></div>
+        <p class="tl-note">Four client-facing SOC reporting engagements, <strong>150–200 process controls</strong> each. VBA automation cut internal documentation time <strong>50×</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The <em>stack</em></h2>
+        <span class="mono">03 — Tools I actually ship with</span>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-col">
+          <h3>GenAI / Agents</h3>
+          <ul>
+            <li>LLMs <small>multimodal</small></li>
+            <li>AI Agents <small>multi-agent</small></li>
+            <li>LangChain · LangGraph</li>
+            <li>LlamaIndex · Google ADK</li>
+            <li>RAG <small>retrieval</small></li>
+            <li>Vector DBs <small>Pinecone</small></li>
+            <li>MCP · Prompt Tuning</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Data / ML</h3>
+          <ul>
+            <li>Python <small>7+ yrs</small></li>
+            <li>SQL <small>BigQuery</small></li>
+            <li>pandas · scikit-learn</li>
+            <li>PyTorch · TensorFlow</li>
+            <li>ETL &amp; Data Pipelines</li>
+            <li>Databricks</li>
+            <li>spaCy · HuggingFace</li>
+          </ul>
+        </div>
+        <div class="stack-col">
+          <h3>Cloud / MLOps</h3>
+          <ul>
+            <li>GCP <small>Vertex AI</small></li>
+            <li>AWS <small>Bedrock · Glue</small></li>
+            <li>Docker · Kubernetes <small>GKE</small></li>
+            <li>FastAPI</li>
+            <li>SageMaker</li>
+            <li>GitHub Pages <small>this site</small></li>
+            <li>Flutter <small>mobile</small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>About</h2>
+        <span class="mono">04 — Short version</span>
+      </div>
+      <div class="about-grid">
+        <p class="big">Systems science by training, builder by habit. I did a Master's at uOttawa, a quantum-computing exchange at Waterloo, and then spent five years putting AI into production for banks, grocers, startups and a city — <em>the pattern is always the same: take the manual, expensive, ambiguous thing, and make it a system with numbers attached.</em> Off the clock: musician, systematic-trading researcher, and maker of small useful tools for my community.</p>
+        <div class="about-facts">
+          <div><span class="k">Education</span><span class="v">M.Sc. Systems Science — uOttawa, 2021</span></div>
+          <div><span class="k">Exchange</span><span class="v">Quantum Computing — U. Waterloo, 2020</span></div>
+          <div><span class="k">Undergrad</span><span class="v">B.E. CSE — GNDU, 2019</span></div>
+          <div><span class="k">Earlier clients</span><span class="v">Scotiabank · City of Ottawa · KPMG</span></div>
+          <div><span class="k">Based</span><span class="v">Canada — Ontario / BC</span></div>
+          <div><span class="k">Off-duty</span><span class="v">Musician · Trader · Builder</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Contact</h2>
+        <span class="mono">05 — No form. Email works.</span>
+      </div>
+      <p class="contact-big">Have a GenAI system to build — <em>or one to fix?</em></p>
+      <a class="contact-mail" href="mailto:karamvir@outlook.com">karamvir@outlook.com</a>
+      <div class="contact-grid">
+        <div>
+          <div class="k">LinkedIn</div>
+          <a href="https://www.linkedin.com/in/-karam/" target="_blank" rel="noopener">linkedin.com/in/-karam ↗</a>
+          <p>Full history, recommendations, and the fastest reply after email.</p>
+        </div>
+        <div>
+          <div class="k">GitHub — Professional</div>
+          <a href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">github.com/Karamvir-Singh ↗</a>
+          <p>WGD-Bot, WasteAdvisor, wasteAPI, udacimak and earlier open source.</p>
+        </div>
+        <div>
+          <div class="k">GitHub — Builds</div>
+          <a href="https://github.com/KaramOfficial" target="_blank" rel="noopener">github.com/KaramOfficial ↗</a>
+          <p>Gurbani timestamper, community trackers, and client sites — all live.</p>
+        </div>
+      </div>
+      <div class="footerline">
+        <span>© 2026 Karamvir Singh</span>
+        <span>Hand-coded — no template, no builder</span>
+        <span>Set in Fraunces, Archivo &amp; Plex Mono</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+function tick(){
+  try{
+    var t = new Date().toLocaleTimeString('en-CA',{timeZone:'America/Toronto',hour:'2-digit',minute:'2-digit',hour12:false});
+    document.getElementById('clock').textContent = t;
+  }catch(e){}
+}
+tick(); setInterval(tick, 30000);
+</script>
+</body>
+</html>
