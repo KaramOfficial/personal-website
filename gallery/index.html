@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karamvir Singh — GenAI Engineer · Gallery</title>
+<meta name="description" content="Karamvir Singh builds production GenAI systems: multi-agent RAG, multimodal search, MLOps on GCP & AWS. Canada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Archivo:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBFAF6; --ink:#23241F; --soft:#6E6F66; --faint:#A9AA9E;
+  --line:#E3E1D6; --accent:#8A5A19; --accent-soft:#F3EAD3;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7}
+::selection{background:var(--accent-soft)}
+a{color:inherit}
+.col{max-width:860px;margin:0 auto;padding:0 26px}
+.cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}
+
+/* nav */
+nav{padding:30px 0 0}
+nav .col{display:flex;justify-content:space-between;align-items:center}
+nav .brand{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.02em;text-decoration:none}
+nav .links{display:flex;gap:30px}
+nav .links a{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+nav .links a:hover{color:var(--accent)}
+@media(max-width:640px){nav .links{gap:18px}nav .links a:nth-child(2){display:none}}
+
+/* hero */
+.hero{text-align:center;padding:110px 0 90px}
+.hero .cap{color:var(--accent)}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(52px,9vw,104px);line-height:1.02;margin:26px 0 8px;letter-spacing:.005em}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .role{font-family:var(--serif);font-style:italic;font-size:clamp(20px,3vw,27px);color:var(--soft)}
+.hero .rule{width:56px;height:1px;background:var(--accent);margin:44px auto}
+.hero .intro{max-width:56ch;margin:0 auto;font-size:17px;color:#3C3D36}
+.hero .intro b{font-weight:500}
+.hero .avail{margin-top:34px;font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}
+.hero .avail i{font-style:normal;color:var(--accent)}
+.hero .cta{margin-top:26px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero .cta a{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:12px 22px;border:1px solid var(--ink)}
+.hero .cta a:first-child{background:var(--ink);color:var(--bg)}
+.hero .cta a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* figures */
+.figures{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.figures figure{padding:30px 18px 34px;text-align:center;border-left:1px solid var(--line)}
+.figures figure:first-child{border-left:none}
+.figures .v{font-family:var(--serif);font-size:clamp(30px,4vw,44px);font-weight:600;line-height:1}
+.figures .v em{color:var(--accent)}
+.figures figcaption{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-top:11px;line-height:1.7}
+@media(max-width:700px){.figures{grid-template-columns:1fr 1fr}.figures figure{border-top:1px solid var(--line)}.figures figure:nth-child(-n+2){border-top:none}.figures figure:nth-child(odd){border-left:none}}
+
+/* sections */
+section{padding:96px 0 0}
+.sec-label{text-align:center;margin-bottom:56px}
+.sec-label .no{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--accent)}
+.sec-label h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5vw,48px);margin-top:8px}
+.sec-label p{color:var(--soft);font-size:14.5px;margin-top:8px}
+
+/* works as exhibits */
+.exhibit{display:grid;grid-template-columns:70px 1fr;gap:22px;padding:36px 0;border-top:1px solid var(--line);text-decoration:none}
+.exhibit:last-of-type{border-bottom:1px solid var(--line)}
+.exhibit .no{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--faint);padding-top:3px}
+.exhibit h3{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.2vw,32px);line-height:1.15}
+.exhibit:hover h3{color:var(--accent)}
+.exhibit .where{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin:9px 0 11px}
+.exhibit p{color:#45463E;font-size:15.5px;max-width:58ch}
+.exhibit p b{font-weight:500;color:var(--ink)}
+.exhibit .result{margin-top:13px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--accent)}
+.exhibit .medium{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:5px}
+@media(max-width:600px){.exhibit{grid-template-columns:44px 1fr;gap:14px}}
+
+/* chronology */
+.chrono{max-width:680px;margin:0 auto}
+.chrono-row{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:22px 0;border-top:1px solid var(--line)}
+.chrono-row:last-child{border-bottom:1px solid var(--line)}
+.chrono-row .when{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding-top:6px;line-height:1.8}
+.chrono-row h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.2}
+.chrono-row h3 span{color:var(--accent);font-style:italic;font-weight:500}
+.chrono-row p{color:#45463E;font-size:14.5px;margin-top:5px}
+.chrono-row p b{font-weight:500;color:var(--ink)}
+@media(max-width:600px){.chrono-row{grid-template-columns:1fr;gap:4px}}
+
+/* stack */
+.stacklist{max-width:680px;margin:0 auto;text-align:center}
+.stacklist .grp{padding:26px 0;border-top:1px solid var(--line)}
+.stacklist .grp:last-child{border-bottom:1px solid var(--line)}
+.stacklist .cap{color:var(--accent);margin-bottom:12px}
+.stacklist .items{font-family:var(--serif);font-size:clamp(20px,2.8vw,26px);font-weight:500;line-height:1.6}
+.stacklist .items span{color:var(--faint);font-style:italic;margin:0 4px}
+
+/* about */
+.about p.big{font-family:var(--serif);font-size:clamp(21px,3vw,28px);line-height:1.55;text-align:center;max-width:34em;margin:0 auto;font-weight:500}
+.about p.big em{color:var(--accent)}
+.about .edu{margin-top:44px;text-align:center;color:var(--soft);font-size:14.5px;line-height:2}
+.about .edu b{color:var(--ink);font-weight:500}
+
+/* contact */
+.contact{text-align:center;padding:110px 0 40px}
+.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(36px,6vw,58px);line-height:1.12}
+.contact h2 em{color:var(--accent)}
+.contact .mail{display:inline-block;margin-top:30px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,3.6vw,32px);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:3px}
+.contact .mail:hover{color:var(--accent)}
+.contact .socials{margin-top:48px;display:flex;justify-content:center;gap:38px;flex-wrap:wrap}
+.contact .socials a{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--soft)}
+.contact .socials a:hover{color:var(--accent)}
+footer{margin-top:100px;border-top:1px solid var(--line);padding:26px 0 34px}
+footer .col{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+</style>
+</head>
+<body>
+
+<nav><div class="col">
+  <a class="brand" href="#top">Karamvir Singh</a>
+  <div class="links"><a href="#work">Work</a><a href="#chrono">Chronology</a><a href="#stack">Stack</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="col">
+  <p class="cap">Portfolio · Volume IV — Gallery Edition</p>
+  <h1>Karamvir <em>Singh</em></h1>
+  <p class="role">GenAI engineer, builder of systems that reach production</p>
+  <div class="rule"></div>
+  <p class="intro">Five years of applied AI — for a national grocer, a bank, a city, and a series of startups — distilled to one discipline: <b>take the manual, expensive, ambiguous thing, and return it as a system with numbers attached.</b> Currently Lead GenAI / Data Engineer at Save The Dev Inc., and AI Solutions Architect via Toptal for PepsiCo Global.</p>
+  <p class="avail"><i>●</i>&nbsp; Available for select engagements — Winter 2026 · Canada</p>
+  <div class="cta">
+    <a href="#work">View the work</a>
+    <a href="https://www.linkedin.com/in/-karam/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></header>
+
+<div class="col"><div class="figures">
+  <figure><div class="v">30<em>×</em></div><figcaption>Effort reduction<br>Multi-agent sales system</figcaption></figure>
+  <figure><div class="v">+30<em>%</em></div><figcaption>Conversion lift<br>Ecommerce search</figcaption></figure>
+  <figure><div class="v">$16<em>M</em></div><figcaption>Yearly saving potential<br>Medslink, Loblaw</figcaption></figure>
+  <figure><div class="v">50→10<em>h</em></div><figcaption>Pipeline runtime<br>2M+ records per cycle</figcaption></figure>
+</div></div>
+
+<section id="work"><div class="col">
+  <div class="sec-label"><div class="no">— I —</div><h2>Selected Works</h2><p>Six pieces, 2021 to present. Each reached production or public release.</p></div>
+
+  <a class="exhibit" href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">
+    <div class="no">No. 1</div>
+    <div><h3>Multi-Agent Research + RAG Sales System</h3>
+    <div class="where">Save The Dev Inc. · Lead GenAI / Data Engineer</div>
+    <p>A <b>multi-agent research and retrieval system</b> that writes personalized sales pitches — architecture, product liaison, and productionization, end to end.</p>
+    <div class="result">Thirty times less effort for the sales team.</div>
+    <div class="medium">LangChain · ADK · LlamaIndex · Pinecone · Vertex AI</div></div>
+  </a>
+
+  <a class="exhibit" href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">
+    <div class="no">No. 2</div>
+    <div><h3>Multimodal Ecommerce Search</h3>
+    <div class="where">Save The Dev Inc. · For global brands</div>
+    <p>Search that understands <b>natural language merchandising</b> — multimodal models and embeddings, calm under <b>one to ten thousand requests a minute</b>.</p>
+    <div class="result">Conversion up thirty percent, at minimum.</div>
+    <div class="medium">Multimodal LLMs · Vector embeddings · AWS</div></div>
+  </a>
+
+  <a class="exhibit" href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">
+    <div class="no">No. 3</div>
+    <div><h3>Medslink</h3>
+    <div class="where">Loblaw Companies · Sr. Data Engineer</div>
+    <p>Recommendations that move medicine <b>between stores before it expires on a shelf</b> — quiet infrastructure for a national drug-store network.</p>
+    <div class="result">Sixteen million dollars a year in potential savings.</div>
+    <div class="medium">GCP · BigQuery · Vertex AI</div></div>
+  </a>
+
+  <a class="exhibit" href="https://karamofficial.github.io/gurbani-checker/" target="_blank" rel="noopener">
+    <div class="no">No. 4</div>
+    <div><h3>Gurbani Subtitle Timestamper</h3>
+    <div class="where">Independent · Open source, 2026</div>
+    <p>Word-level alignment of Sehaj Paath audio — <b>all 1,430 Angs</b> — published with a checker so anyone can verify the timing themselves.</p>
+    <div class="result">Thirty times faster than aligning by hand.</div>
+    <div class="medium">Gemini · Classical ML · GitHub Pages</div></div>
+  </a>
+
+  <a class="exhibit" href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">
+    <div class="no">No. 5</div>
+    <div><h3>Mia ML Deployment Platform</h3>
+    <div class="where">Mia Platform Inc. · GenAI / MLOps Engineer</div>
+    <p>The <b>end-to-end pipeline</b> that took models from a data scientist's notebook to paying clients — plus three LLM products shipped on top of it.</p>
+    <div class="result">Concept to production, as a habit.</div>
+    <div class="medium">FastAPI · Docker · GKE · BigQuery</div></div>
+  </a>
+
+  <a class="exhibit" href="https://github.com/Karamvir-Singh/WGD-Bot" target="_blank" rel="noopener">
+    <div class="no">No. 6</div>
+    <div><h3>Systematic Trading Research</h3>
+    <div class="where">Independent · 2022 to present</div>
+    <p>Six markets, one rule-set, tested honestly. <b>Gold held up; the rest were rejected in writing.</b> The negative results are exhibited alongside the positive — that is the piece.</p>
+    <div class="result">Gold: +17.13R across 101 trades, profit factor 1.28.</div>
+    <div class="medium">Python · TwelveData · Statistics</div></div>
+  </a>
+</div></section>
+
+<section id="chrono"><div class="col">
+  <div class="sec-label"><div class="no">— II —</div><h2>Chronology</h2></div>
+  <div class="chrono">
+    <div class="chrono-row"><div class="when">2024 — Present</div><div><h3>Lead GenAI / Data Engineer, <span>Save The Dev</span></h3><p>Multi-agent RAG and multimodal search, above. In parallel, <b>AI Solutions Architect via Toptal — PepsiCo Global</b>.</p></div></div>
+    <div class="chrono-row"><div class="when">2023 — 2024</div><div><h3>Sr. Data Engineer, <span>Loblaw</span></h3><p>Medslink. Pipelines over <b>2M+ records per cycle, fifty hours down to ten</b>.</p></div></div>
+    <div class="chrono-row"><div class="when">2021 — 2023</div><div><h3>GenAI / MLOps Engineer, <span>Mia Platform</span></h3><p>Client LLM products and the deployment pipeline beneath them; adviser to the founders on GenAI and cloud.</p></div></div>
+    <div class="chrono-row"><div class="when">2021</div><div><h3>AI Strategy Consultant, <span>Lemay AI</span></h3><p>Three client solutions; a securities database of <b>160M rows</b>; processing made <b>ten times faster</b>.</p></div></div>
+    <div class="chrono-row"><div class="when">2020 — 2021</div><div><h3>AI Engineer, <span>City of Ottawa</span> · President, <span>uOttawa PDC</span></h3><p>A vision system that sorts waste at <b>80–90% accuracy</b>; a club of <b>700+ engineers</b> led for a year.</p></div></div>
+    <div class="chrono-row"><div class="when">2019</div><div><h3>IT Analyst, <span>KPMG</span></h3><p>Four audit engagements; automation that cut documentation work <b>fifty-fold</b>. The first lesson: measure everything.</p></div></div>
+  </div>
+</div></section>
+
+<section id="stack"><div class="col">
+  <div class="sec-label"><div class="no">— III —</div><h2>The Stack</h2><p>Only what has run in production.</p></div>
+  <div class="stacklist">
+    <div class="grp"><div class="cap">GenAI &amp; Agents</div><div class="items">LLMs <span>·</span> Multi-Agent Systems <span>·</span> LangChain <span>·</span> LangGraph <span>·</span> LlamaIndex <span>·</span> RAG <span>·</span> Pinecone <span>·</span> MCP</div></div>
+    <div class="grp"><div class="cap">Data &amp; Machine Learning</div><div class="items">Python <span>·</span> SQL <span>·</span> pandas <span>·</span> scikit-learn <span>·</span> PyTorch <span>·</span> Databricks <span>·</span> HuggingFace</div></div>
+    <div class="grp"><div class="cap">Cloud &amp; MLOps</div><div class="items">GCP Vertex AI <span>·</span> AWS Bedrock <span>·</span> BigQuery <span>·</span> Docker <span>·</span> Kubernetes <span>·</span> FastAPI <span>·</span> Flutter</div></div>
+  </div>
+</div></section>
+
+<section class="about"><div class="col">
+  <div class="sec-label"><div class="no">— IV —</div><h2>About</h2></div>
+  <p class="big">Systems science by training — a Master's at Ottawa, a quantum-computing term at Waterloo — and a builder by temperament. <em>Off the clock: musician, trading researcher, and maker of small useful tools for his community.</em></p>
+  <p class="edu"><b>M.Sc. Systems Science</b> — University of Ottawa, 2021 &nbsp;·&nbsp; <b>Quantum Computing Exchange</b> — University of Waterloo, 2020 &nbsp;·&nbsp; <b>B.E. Computer Science</b> — GNDU, 2019</p>
+</div></section>
+
+<div class="contact" id="contact"><div class="col">
+  <p class="cap" style="color:var(--accent)">— V — Correspondence</p>
+  <h2 style="margin-top:20px">A system to build,<br><em>or one to fix?</em></h2>
+  <a class="mail" href="mailto:karamvir@outlook.com">karamvir@outlook.com</a>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/-karam/" target="_blank" rel="noopener">LinkedIn — /in/-karam</a>
+    <a href="https://github.com/Karamvir-Singh" target="_blank" rel="noopener">GitHub — Professional</a>
+    <a href="https://github.com/KaramOfficial" target="_blank" rel="noopener">GitHub — Builds</a>
+  </div>
+</div></div>
+
+<footer><div class="col"><span>© 2026 Karamvir Singh</span><span>Hand-coded — no template, no builder</span><span>Set in Cormorant &amp; Archivo</span></div></footer>
+
+</body>
+</html>
